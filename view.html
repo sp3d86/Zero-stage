@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="RU"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+<title>Виджеты</title>
+<link rel="stylesheet" type="text/css" href="view.css">
+<script src="closure-library/closure/goog/base.js"></script>
+<script src="view.js"></script>
+</head>
+<body>
+<div class="clWall"></div>
+<div class="menuViews" id="views">
+</div>
+<div class="flCanv" id="canvas">Тут должны быть отображены виджеты
+<svg width="300" height="300">
+  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+  <rect width="80" height="30" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+  <ellipse cx="100" cy="80" rx="100" ry="50" style="fill:yellow;stroke:purple;stroke-width:2" />
+  <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
+   <polyline points="20,20 40,25 60,40 80,120 120,140 200,180"
+  style="fill:none;stroke:black;stroke-width:3" />
+  <polygon points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1" />
+    <text x="0" y="15" fill="red">I love SVG!</text>
+</svg>
+</div>
+<div class="clWall"></div>
+
+<script>
+function main() {
+
+  //var xmlData = utils.view.loadXML();
+  //utils.view.makeList(xmlData, widgetList);
+
+  var xmlData = '<MainView id="View1">'+
+'<View name="SubView1" parent="View1" title="Графические виджеты">'+
+'<Widget type="triangle" title="Треугольник" x="20" y="45"/>'+
+'<Widget type="rectangle" title="Прямоугольник" x="180" y="60"/>'+
+'<Widget type="line" title="Линия" x="10" y="150"/>'+
+'<Widget type="text" title="Текст" x="150" y="150"/>'+
+'<Widget type="ellipse" title="Овал" x="10" y="150"/>'+
+'<Widget type="polygon" title="Ломанная линия" x="150" y="150"/>'+
+'</View>'+
+'<View name="SubView2" parent="View1" title="Управляющие виджеты">'+
+'<Widget type="button" title="Кнопка" x="10" y="150"/>'+
+'<Widget type="input" title="Поле для ввода" x="150" y="150"/>'+
+'</View>'+
+'</MainView>';
+
+ var docXML = utils.view.parseXML(xmlData);
+
+var widgetList = document.getElementById('views');
+var listWidgets = utils.view.makeList(docXML, widgetList);
+  
+}
+main();
+</script>
+</body>
+</html>

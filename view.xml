@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MainView id="View1">
+<View name="SubView1" parent="View1" title="Графические виджеты">
+<Widget type="triangle" title="Треугольник" x="20" y="45"/>
+<Widget type="rectangle" title="Прямоугольник" x="180" y="60"/>
+<Widget type="line" title="Линия" x="10" y="150"/>
+<Widget type="text" title="Текст" x="150" y="150"/>
+<Widget type="ellipse" title="Овал" x="10" y="150"/>
+<Widget type="polygon" title="Ломанная линия" x="150" y="150"/>
+</View>
+<View name="SubView2" parent="View1" title="Управляющие виджеты">
+<Widget type="button" title="Кнопка" x="10" y="150"/>
+<Widget type="input" title="Поле для ввода" x="150" y="150"/>
+</View>
+</MainView>
